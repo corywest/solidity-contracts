@@ -40,6 +40,14 @@ contract FundManager {
         bank = new Bank();
     }
 
+    function setBank(address newBank) returns (bool response) {
+      if(msg.sender != owner) {
+        return false;
+      }
+      bank = newBank;
+      return true;
+    }
+
     function deposit() returns (bool response) {
         if(msg.value == 0) {
             return false;
