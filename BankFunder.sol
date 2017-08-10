@@ -11,7 +11,7 @@ contract Bank {
 
     function deposit() payable { }
 
-    function withdrawl(address customer, uint amount) returns (bool response) {
+    function withdraw(address customer, uint amount) returns (bool response) {
         if(balanceOf[customer] < amount || amount == 0) {
             return false;
         }
